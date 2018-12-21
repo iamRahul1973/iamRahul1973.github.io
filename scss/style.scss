@@ -1,0 +1,480 @@
+@charset "utf-8";
+
+@import 'common';
+
+html {
+  // scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f9f7f8;
+}
+
+.header-area {
+  height: 100vh;
+}
+
+.welcome {
+    position: relative;
+    height: 100%;
+    background: url('../img/header-bg.jpg');
+    background-size: auto;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .welcome-text {
+      position: relative;
+      z-index: 2;
+      h2 {
+        background-color: #ff9800;
+        text-transform: uppercase;
+        font-size: 25px;
+        padding: 10px 20px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-align: center;
+      }
+      h1 {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 34px;
+      }
+    }
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+}
+
+.section-head {
+  text-align: center;
+  text-transform: uppercase;
+  h3 {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    width: fit-content;
+    width: -moz-fit-content;
+    margin: 0 auto;
+    border-bottom-color: #ff9800;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    padding: 10px;
+    margin-bottom: 30px;
+    span {
+      color: #ff9800;
+    }
+  }
+}
+
+.about-text {
+    padding: 0 40px;
+    p {
+      letter-spacing: 0.3px;
+      line-height: 30px;
+    }
+}
+
+.custom-btn {
+  background-color: #ff9800;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 6px 20px;
+}
+
+.services-icon {
+  img {
+    width: 70px;
+    margin-bottom: 40px;
+  }
+}
+
+.service-box {
+  border: 1px solid #eaeaea;
+  padding: 30px;
+  transition: box-shadow .3s;
+  h3 {
+    font-size: 19px;
+    font-weight: 600;
+  }
+  p {
+    line-height: 30px;
+  }
+  &:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+  }
+}
+
+.tool-item {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  h4 {
+    font-size: 60px;
+    a {
+      color: inherit;
+    }
+  }
+  img {
+    width: 91px !important;
+    margin: auto;
+  }
+}
+
+// Owl Nav for MY-TOOLS
+
+.main-content {
+  position: relative;
+
+  .owl-theme {
+    .custom-nav {
+      position: absolute;
+      top: 15%;
+      left: 0;
+      right: 0;
+
+      .owl-prev, .owl-next {
+        position: absolute;
+        color: inherit;
+        background: none;
+        border: none;
+        z-index: 100;
+
+        i {
+          font-size: 17px;
+        }
+      }
+
+      .owl-prev {
+        left: 0;
+      }
+
+      .owl-next {
+        right: 0;
+      }
+    }
+  }
+}
+
+// Portfolio
+
+.hover-box {
+  display: flex;
+  background: #171109e0;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 92%;
+  color: #fff;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  opacity: 0;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -ms-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+  h3 {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 2px;
+    padding-bottom: 20px;
+  }
+}
+
+.portfolio-item {
+  padding: 15px;
+  img {
+    border: 1px solid #eaeaea;
+    padding: 1px;
+  }
+  &:hover {
+    cursor: pointer;
+    .hover-box {
+      opacity: 1;
+    }
+  }
+}
+
+#projectDetailsModal {
+  h5 {
+    color: #ff9800;
+  }
+
+  p, h6 {
+    color: #867c7c;
+  }
+
+  h6 {
+    font-weight: 400;
+    span {
+      margin-right: 10px;
+    }
+    i {
+      font-size: 12px;
+    }
+  }
+}
+
+.contact-form {
+  .form-control {
+    &:focus {
+      box-shadow: none;
+      border: 1px solid #ff9800;
+    }
+  }
+  .form-label {
+    label {
+      color: #9e9e9e;
+    }
+  }
+}
+
+.tile {
+  background: #ff9800;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 160px;
+  padding: 10px 0;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -ms-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+  img {
+    width: 60px;
+  }
+  h6 {
+    a {
+      -moz-transition: all 0.4s ease-in-out 0s;
+      -webkit-transition: all 0.4s ease-in-out 0s;
+      -ms-transition: all 0.4s ease-in-out 0s;
+      transition: all 0.4s ease-in-out 0s;
+      color: #fff;
+      &:hover {
+        text-decoration: none;
+        letter-spacing: 0.2px;
+      }
+    }
+    text-align: center;
+    font-weight: 400;
+  }
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 11px rgb(98, 95, 91);
+  }
+}
+
+section.footer {
+  background-color: #1b1a1a;
+  padding: 30px;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+}
+.social-link {
+  padding: 10px;
+}
+.social-link img {
+  width: 40px;
+}
+.copyright {
+  text-align: center;
+  color: #eaeaea;
+  h6 {
+    font-size: 14px;
+    font-weight: 300;
+    padding-top: 20px;
+  }
+}
+
+// Navbar transparent to solid color on scroll
+
+.navbar.solid {
+  background-color: rgba(255, 255, 255, 0.93);
+  transition: background-color 1s ease 0s;
+  box-shadow: 0 0 4px grey;
+  border-bottom: 1px solid gainsboro;
+  .navbar-brand {
+    color: #8c8c8c;
+    transition: color 1s ease 0s;
+  }
+  .navbar-nav {
+    > li {
+      > a {
+        color: #8c8c8c;
+        transition: color 1s ease 0s;
+      }
+    } //end li
+  } //end .navbar-nav
+}
+
+.navbar-default {
+  a {
+    color: #fff;
+  }
+}
+
+// Changing the bootstrap style
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+// Rotating the hour glass
+
+#hourglass {
+  font-size: 26px;
+}
+
+.rotated {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+// PRE-LOADER
+
+#loader {
+  /* Uncomment this to make it run! */
+  /*
+     animation: loader 5s linear infinite;
+  */
+
+  position: absolute;
+  top: calc(50% - 20px);
+  left: calc(50% - 20px);
+  z-index: 100;
+}
+@keyframes loader {
+  0% { left: -100px }
+  100% { left: 110%; }
+}
+#box {
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  animation: animate .5s linear infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 3px;
+}
+@keyframes animate {
+  17% { border-bottom-right-radius: 3px; }
+  25% { transform: translateY(9px) rotate(22.5deg); }
+  50% {
+    transform: translateY(18px) scale(1,.9) rotate(45deg) ;
+    border-bottom-right-radius: 40px;
+  }
+  75% { transform: translateY(9px) rotate(67.5deg); }
+  100% { transform: translateY(0) rotate(90deg); }
+}
+#shadow {
+  width: 50px;
+  height: 5px;
+  background: #000;
+  opacity: 0.1;
+  position: absolute;
+  top: 59px;
+  left: 0;
+  border-radius: 50%;
+  animation: shadow .5s linear infinite;
+}
+@keyframes shadow {
+  50% {
+    transform: scale(1.2,1);
+  }
+}
+
+#pre-loader-wrapper {
+  background: #ff9800; //#6997DB;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  z-index: 1500;
+}
+
+@media screen and (max-width: 991px) {
+  .fmo-tiles-wrapper {
+    .row {
+      div.col-md-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .fmo-tiles-wrapper {
+    .row {
+      div.col-md-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+  }
+
+  .service-box:nth-of-type(1) {
+    margin-bottom: 20px;
+  }
+
+  .hover-box {
+    width: 94%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .welcome {
+    .welcome-text {
+      h1 {
+        font-size: 28px;
+      }
+      h2 {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .welcome {
+    .welcome-text {
+      h1 {
+        font-size: 24px;
+      }
+      h2 {
+        font-size: 20px;
+      }
+    }
+  }
+}
