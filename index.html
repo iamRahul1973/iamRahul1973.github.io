@@ -3,11 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Hello, I'm Rahul, a Web Developer with two years of experience in Front-End and Back-End development.">
+    <meta name="keywords" content="iamrahul1973, php developer, front-end developer, rahulkr1973">
+    <meta name="language" content="english">
+    <meta name="web_author" content="rahulkr1973@gmail.com">
+    <meta name="theme-color" content="#ff9800">
 
+    <link rel="shortcut icon" type="image/png" href="img/icon.png">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.all.min.css" type="text/css">
+    <link rel="stylesheet" href="css/toastr.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
     <title>Hello World, Welcome to my Portfolio !</title>
@@ -321,14 +328,14 @@
     </div>
     <div class="container">
         <div class="form-container mt-2">
-            <form action="#" method="post" autocomplete="off">
+            <form action="#" method="post" autocomplete="off" id="sendEmail">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <div class="form-label">
                                 <label for="name">Name</label>
                             </div>
-                            <input type="text" name="name" id="name" class="form-control">
+                            <input type="text" name="name" id="name" class="form-control" required>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -336,7 +343,7 @@
                             <div class="form-label">
                                 <label for="email">Email</label>
                             </div>
-                            <input type="email" name="email" id="email" class="form-control">
+                            <input type="email" name="email" id="email" class="form-control" required>
                         </div>
                     </div>
                 </div>
@@ -346,7 +353,8 @@
                             <div class="form-label">
                                 <label for="message">Message</label>
                             </div>
-                            <textarea name="message" id="message" class="form-control" rows="6"></textarea>
+                            <textarea name="message" id="message" class="form-control" rows="6" required
+                                      minlength="10"></textarea>
                         </div>
                     </div>
                 </div>
@@ -354,6 +362,18 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <input type="submit" class="btn btn-sm custom-btn" value="Submit">
+                            <!--<div class="ajax-loader">
+                                <div id="fountainG">
+                                    <div id="fountainG_1" class="fountainG"></div>
+                                    <div id="fountainG_2" class="fountainG"></div>
+                                    <div id="fountainG_3" class="fountainG"></div>
+                                    <div id="fountainG_4" class="fountainG"></div>
+                                    <div id="fountainG_5" class="fountainG"></div>
+                                    <div id="fountainG_6" class="fountainG"></div>
+                                    <div id="fountainG_7" class="fountainG"></div>
+                                    <div id="fountainG_8" class="fountainG"></div>
+                                </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -460,7 +480,7 @@
                 <h6 class="mb-2">
                     <span class="badge badge-primary p-2 badge-pill"><i class="fa fa-tags"></i> CodeIgniter</span>
                 </h6>
-                <div class="text-center">
+                <div class="text-center mt-2">
                     <a role="button" class="btn btn-sm custom-rect-outline-btn" href="http://amalmanch.com/"
                        target="_blank">View Website</a>
                 </div>
@@ -492,7 +512,7 @@
                     <span class="badge badge-primary p-2 badge-pill"><i class="fa fa-tags"></i> gulpMinify</span>
                     <span class="badge badge-primary p-2 badge-pill"><i class="fa fa-tags"></i> dompdf</span>
                 </h6>
-                <div class="text-center">
+                <div class="text-center mt-2">
                     <a role="button" class="btn btn-sm custom-rect-outline-btn" href="http://www.cap.ind.in/"
                        target="_blank">View Website</a>
                 </div>
@@ -525,7 +545,7 @@
                     <span class="badge badge-primary p-2 badge-pill"><i class="fa fa-tags"></i> composer</span>
                     <span class="badge badge-primary p-2 badge-pill"><i class="fa fa-tags"></i> uri-rewrite</span>
                 </h6>
-                <div class="text-center">
+                <div class="text-center mt-2">
                     <a role="button" class="btn btn-sm custom-rect-outline-btn" href="http://entesalabhanjika.com/"
                        target="_blank">View Website</a>
                 </div>
@@ -556,7 +576,7 @@
                     <span class="badge badge-primary p-2 badge-pill"><i class="fa fa-tags"></i> Sass</span>
                     <span class="badge badge-primary p-2 badge-pill"><i class="fa fa-tags"></i> GulpMinify</span>
                 </h6>
-                <div class="text-center">
+                <div class="text-center mt-2">
                     <a role="button" class="btn btn-sm custom-rect-outline-btn" href="http://www.kottakkalnandakumarannair.com/"
                        target="_blank">View Website</a>
                 </div>
@@ -590,129 +610,7 @@
 <script type="text/javascript" src="js/popper.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/owl.carousel.min.js"></script>
-
-<script type="text/javascript">
-    $(document).ready(function () {
-
-        // Pre Loader
-        window.onload = function () {
-            setTimeout(function () {
-                $('#pre-loader-wrapper').fadeOut(1000, function () {
-                    $('#pre-loader-wrapper').remove();
-                });
-            }, 1000);
-        };
-
-        $('#box').on('click', function () {
-            alert('Clicked on the Box !');
-        });
-
-        // My Tools
-        var owlTools = $('#owl-tools');
-
-        owlTools.owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: true,
-            navText: ['<i class="far fa-hand-point-left"></i>', '<i class="far fa-hand-point-right"></i>'],
-            navContainer: '.main-content .custom-nav',
-            dots: false,
-            responsiveClass: true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 5
-                }
-            },
-            autoplay: true,
-            autoplayTimeout: 2000,
-            autoplayHoverPause: true
-        });
-
-        // My Portfolio
-        var owlFolio = $('#owl-folio');
-
-        owlFolio.owlCarousel({
-            // loop: true,
-            dots: true,
-            nav: true,
-            responsiveClass: true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                768: {
-                    items: 2
-                },
-                1000: {
-                    items: 3
-                }
-            }
-            /*autoplay: true,
-            autoplayTimeout: 1500,
-            autoplayHoverPause: true*/
-        });
-
-        var headerAreaHeight = $('.header-area').height();
-        var navbarHeight = $('.navbar').height();
-
-        // Navbar Transparent to Solid Color
-        /*$(window).scroll(function () {
-            // checks if window is scrolled more than 500px, adds/removes solid class
-            if ($(this).scrollTop() > (headerAreaHeight - 100)) {
-                $('.navbar').addClass('solid');
-            } else {
-                $('.navbar').removeClass('solid');
-            }
-        });*/
-
-        // navigation scroll lijepo radi materem
-        $('.nav-link').click(function (event) {
-            var id = $(this).attr("href");
-            var target = $(id).offset().top - (navbarHeight + 30);
-            $('html, body').animate({
-                scrollTop: target
-            }, 500);
-            event.preventDefault();
-        });
-    });
-
-    // HOURGLASS NAVBRAND
-
-    // Animation to fill the hourglass
-    function hourglassFill() {
-        let hourglass = document.getElementById('hourglass');
-        hourglass.innerHTML = "&#xf251";
-
-        // half
-        setTimeout(function () {
-            hourglass.innerHTML = "&#xf252";
-        }, 1000);
-
-        // end
-        setTimeout(function () {
-            hourglass.innerHTML = "&#xf253";
-        }, 2000);
-
-        // rotate
-        setTimeout(function () {
-            hourglass.classList.toggle('rotated');
-        }, 3000);
-
-        // rotate again to the original position
-        setTimeout(function () {
-            hourglass.classList.toggle('rotated');
-            hourglass.innerHTML = "&#xf251";
-        }, 3500);
-    }
-
-    hourglassFill();
-    setInterval(hourglassFill, 4000);
-</script>
+<script type="text/javascript" src="js/toastr.min.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
 </body>
 </html>
