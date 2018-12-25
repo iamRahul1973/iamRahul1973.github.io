@@ -34,7 +34,7 @@ body {
       h2 {
         background-color: #ff9800;
         text-transform: uppercase;
-        font-size: 25px;
+        font-size: 2.5rem;
         padding: 10px 20px;
         font-weight: 600;
         letter-spacing: 1px;
@@ -42,8 +42,10 @@ body {
       }
       h1 {
         text-transform: uppercase;
-        letter-spacing: 1px;
+        letter-spacing: 3px;
         font-size: 34px;
+        text-align: center;
+        font-weight: 400;
       }
     }
     &::after {
@@ -171,48 +173,91 @@ body {
   }
 }
 
-// Portfolio
+// Portfolio Rotate Animation
 
-.hover-box {
-  display: flex;
-  background: #171109e0;
-  border-radius: 10px;
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 92%;
-  color: #fff;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 50px;
-  opacity: 0;
-  -moz-transition: all 0.4s ease-in-out 0s;
-  -webkit-transition: all 0.4s ease-in-out 0s;
-  -ms-transition: all 0.4s ease-in-out 0s;
-  transition: all 0.4s ease-in-out 0s;
-  h3 {
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size: 22px;
-    letter-spacing: 2px;
-    padding-bottom: 20px;
-  }
+.col {
+  width: 100%;
+  cursor: pointer;
 }
 
-.portfolio-item {
-  padding: 15px;
-  img {
-    border: 1px solid #eaeaea;
-    padding: 1px;
-  }
+.portfolio-item-container {
+  transform-style: preserve-3d;
+  perspective: 1000px;
   &:hover {
-    cursor: pointer;
-    .hover-box {
-      opacity: 1;
+    .front, .back {
+      transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    }
+    .front {
+      transform: rotateY(-180deg);
+      transform-style: preserve-3d;
+    }
+    .back {
+      transform: rotateY(0deg);
+      transform-style: preserve-3d;
     }
   }
 }
+
+.front, .back {
+  background-size: cover;
+  background-postion: center;
+  transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  backface-visibility: hidden;
+  text-align: center;
+  height: auto;
+  color: #fff;
+}
+
+.back {
+  background: #ff9800;
+  h4 {
+    font-size: 21px;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    font-weight: 400;
+  }
+}
+
+.front {
+  transform: rotateY(0deg);
+  transform-style: preserve-3d;
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    content: '';
+    display: block;
+    backface-visibility: hidden;
+  }
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+
+.inner {
+  transform: translateY(-50%) translateZ(60px) scale(0.94);
+  top: 50%;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+  outline: 1px solid transparent;
+  perspective: inherit;
+  z-index: 2;
+}
+
+// Portfolio Rotate Animation
 
 #projectDetailsModal {
   h5 {
@@ -310,22 +355,20 @@ section.footer {
 
 // Navbar transparent to solid color on scroll
 
-.navbar.solid {
+/*.navbar.solid {
   background-color: rgba(255, 255, 255, 0.93);
   transition: background-color 1s ease 0s;
   box-shadow: 0 0 4px grey;
   border-bottom: 1px solid gainsboro;
   .navbar-brand {
-    color: #8c8c8c;
+    color: #FF9800;
     transition: color 1s ease 0s;
   }
   .navbar-nav {
-    > li {
-      > a {
-        color: #8c8c8c;
-        transition: color 1s ease 0s;
-      }
-    } //end li
+    > a.nav-item {
+      color: #8c8c8c;
+      transition: color 1s ease 0s;
+    }
   } //end .navbar-nav
 }
 
@@ -333,12 +376,19 @@ section.footer {
   a {
     color: #fff;
   }
+}*/
+
+.navbar {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid gainsboro;
+  box-shadow: 0 0 4px grey;
 }
 
 // Changing the bootstrap style
-.navbar-expand-lg .navbar-nav .nav-link {
+.navbar-nav .nav-link {
   padding-right: 1rem;
   padding-left: 1rem;
+  font-size: 14px;
 }
 
 // Rotating the hour glass
@@ -358,6 +408,53 @@ section.footer {
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+}
+
+// Portfolio Modals
+
+.modal-folio {
+  .modal-header {
+    h5 {
+      font-size: 18px;
+      letter-spacing: 1px;
+      font-weight: 400;
+    }
+  }
+  .modal-body {
+    p {
+      color: #868484;
+      font-size: 15px;
+      line-height: 26px;
+      letter-spacing: 0.2px;
+      padding-bottom: 10px;
+      padding-top: 6px;
+    }
+    h6 {
+      font-weight: 400;
+      font-size: 14px;
+      span {
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.custom-rect-outline-btn {
+  background: transparent;
+  color: #FF9800;
+  text-transform: uppercase;
+  padding: 6px 20px;
+  border-radius: unset;
+  border: 1px solid #FF9800;
+  margin: 0 auto;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    background: #FF9800;
+    color: #fff;
+  }
 }
 
 // PRE-LOADER
@@ -457,12 +554,25 @@ section.footer {
   .welcome {
     .welcome-text {
       h1 {
-        font-size: 28px;
+        font-size: 22px;
+        letter-spacing: 3px;
+        text-align: center;
       }
       h2 {
-        font-size: 22px;
+        background-color: #ffffff80;
+        color: #000;
+        font-size: 2.5rem;
+        line-height: 50px;
+        span.white-text {
+          color: #000;
+        }
       }
     }
+  }
+
+  .navbar-nav .nav-link {
+    background: #eaeaea;
+    margin: 4px 0;
   }
 }
 
@@ -470,9 +580,6 @@ section.footer {
   .welcome {
     .welcome-text {
       h1 {
-        font-size: 24px;
-      }
-      h2 {
         font-size: 20px;
       }
     }
